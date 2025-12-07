@@ -3,6 +3,7 @@
 import json
 import os
 import logging
+from dotenv import load_dotenv
 from helpers.utils import generate_secure_random_string
 from services.supabase_service import SupabaseClient
 
@@ -16,6 +17,9 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s',
     datefmt='%Y-%m-%d %H:%M:%S'
 )
+
+# Load environment variables from .env file (if present)
+load_dotenv()
 
 def main():
     # Load configurations from config.json
